@@ -1,31 +1,154 @@
 
+// const projects = [
+//   {
+//     number: "01",
+//     title: "Dress E-Commerce Website",
+//     category: "Full Stack Development",
+//     description:
+//       "A complete online dress shopping platform with user authentication, product management, shopping cart, orders, payments and admin dashboard.",
+//     technologies: [
+//       "React",
+//       "Node.js",
+//       "Express",
+//       "MongoDB",
+//     ],
+//     github: "https://github.com/jafna-k/Ecommerce-Frontend",
+//   },
+//   {
+//     number: "02",
+//     title: "Personal Portfolio",
+//     category: "Frontend Development",
+//     description:
+//       "A responsive personal portfolio website to showcase my profile, technical skills, projects and contact information.",
+//     technologies: [
+//       "Next.js",
+//       "React",
+//       "Tailwind CSS",
+//     ],
+//     github: "#",
+//   },
+// ];
+
+// export default function Projects() {
+//   return (
+//     <section
+//       id="projects"
+//       className="bg-zinc-900 text-white py-24 px-6"
+//     >
+//       <div className="max-w-6xl mx-auto">
+
+//         <p className="text-purple-400 text-center mb-3">
+//           My Recent Work
+//         </p>
+
+//         <h2 className="text-4xl md:text-5xl font-bold text-center mb-5">
+//           My <span className="text-purple-500">Projects</span>
+//         </h2>
+
+//         <p className="text-gray-400 text-center mb-16">
+//           Some projects I have worked on.
+//         </p>
+
+//         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+//           {projects.map((project) => (
+//             <div
+//               key={project.number}
+//               className="group bg-zinc-950 border border-zinc-800 rounded-2xl p-8 hover:border-purple-500 hover:-translate-y-2 transition-all duration-300"
+//             >
+
+//               <div className="flex justify-between items-center mb-7">
+
+//                 <span className="text-purple-500 text-4xl font-bold">
+//                   {project.number}
+//                 </span>
+
+//                 <span className="text-xs text-purple-400 bg-purple-500/10 px-4 py-2 rounded-full">
+//                   {project.category}
+//                 </span>
+
+//               </div>
+
+//               <h3 className="text-2xl font-bold mb-5 group-hover:text-purple-400 transition">
+//                 {project.title}
+//               </h3>
+
+//               <p className="text-gray-400 leading-8 mb-7">
+//                 {project.description}
+//               </p>
+
+//               <div className="flex flex-wrap gap-3 mb-8">
+
+//                 {project.technologies.map((tech) => (
+//                   <span
+//                     key={tech}
+//                     className="text-sm bg-zinc-800 text-purple-300 px-4 py-2 rounded-lg"
+//                   >
+//                     {tech}
+//                   </span>
+//                 ))}
+
+//               </div>
+
+//               <a
+//                 href={project.github}
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 className="inline-block text-purple-400 font-semibold hover:text-purple-300 transition"
+//               >
+//                 View on GitHub →
+//               </a>
+
+//             </div>
+//           ))}
+
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+
+
+
+
+"use client";
+
+import { motion } from "framer-motion";
+
 const projects = [
   {
-    number: "01",
-    title: "Dress E-Commerce Website",
+    title: "Dress E-Commerce",
     category: "Full Stack Development",
     description:
-      "A complete online dress shopping platform with user authentication, product management, shopping cart, orders, payments and admin dashboard.",
-    technologies: [
-      "React",
-      "Node.js",
-      "Express",
-      "MongoDB",
-    ],
-    github: "https://github.com/jafna-k/Ecommerce-Frontend",
+      "A modern online fashion shopping platform with products, cart, authentication and admin dashboard.",
+    image: "/Ecommerce.png",
+    tech: ["React", "Node.js", "MongoDB"],
+    github: "https://github.com",
+    demo: "https://example.com",
+    number: "01",
   },
   {
-    number: "02",
-    title: "Personal Portfolio",
+    title: "Creative Portfolio",
     category: "Frontend Development",
     description:
-      "A responsive personal portfolio website to showcase my profile, technical skills, projects and contact information.",
-    technologies: [
-      "Next.js",
-      "React",
-      "Tailwind CSS",
-    ],
-    github: "#",
+      "A beautiful personal portfolio with creative animations, modern layouts and responsive design.",
+    image: "/images/project2.png",
+    tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    github: "https://github.com",
+    demo: "https://example.com",
+    number: "02",
+  },
+  {
+    title: "Dashboard UI",
+    category: "Web Application",
+    description:
+      "A clean dashboard interface with statistics, data cards and interactive components.",
+    image: "/images/project3.png",
+    tech: ["React", "Tailwind CSS", "JavaScript"],
+    github: "https://github.com",
+    demo: "https://example.com",
+    number: "03",
   },
 ];
 
@@ -33,76 +156,129 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="bg-zinc-900 text-white py-24 px-6"
+      className="relative overflow-hidden bg-[#FFF9F0] px-5 py-24 md:px-12"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="absolute -left-20 top-20 h-72 w-72 rounded-full bg-[#F6C94D]/20 blur-3xl" />
+      <div className="absolute -right-20 bottom-10 h-72 w-72 rounded-full bg-[#F28B38]/10 blur-3xl" />
 
-        <p className="text-purple-400 text-center mb-3">
-          My Recent Work
-        </p>
+      <div className="relative mx-auto max-w-7xl">
 
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-5">
-          My <span className="text-purple-500">Projects</span>
-        </h2>
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16 text-center"
+        >
+          <span className="rounded-full bg-orange-100 px-5 py-2 text-sm font-bold text-[#F28B38]">
+            MY RECENT WORK
+          </span>
 
-        <p className="text-gray-400 text-center mb-16">
-          Some projects I have worked on.
-        </p>
+          <h2 className="mt-6 text-4xl font-black text-[#172033] md:text-6xl">
+            My <span className="text-[#F28B38]">Projects.</span>
+          </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <p className="mt-4 text-[#827968]">
+            Some creative projects I have worked on
+          </p>
+        </motion.div>
 
-          {projects.map((project) => (
-            <div
+        {/* Project Cards */}
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project, index) => (
+            <motion.div
               key={project.number}
-              className="group bg-zinc-950 border border-zinc-800 rounded-2xl p-8 hover:border-purple-500 hover:-translate-y-2 transition-all duration-300"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              whileHover={{ y: -12, rotateX: 3, rotateY: -3 }}
+              style={{ transformStyle: "preserve-3d" }}
+              className="group overflow-hidden rounded-[28px] border border-orange-100 bg-white shadow-[0_9px_0_#E9D8BE] transition-all duration-300 hover:shadow-[0_15px_30px_rgba(120,80,30,0.15)]"
             >
-
-              <div className="flex justify-between items-center mb-7">
-
-                <span className="text-purple-500 text-4xl font-bold">
+              {/* Project Image */}
+              <div className="relative overflow-hidden bg-[#F4EBDD] p-4">
+                <div className="absolute left-7 top-7 z-10 rounded-full bg-white px-4 py-2 text-sm font-black text-[#F28B38] shadow">
                   {project.number}
-                </span>
+                </div>
 
-                <span className="text-xs text-purple-400 bg-purple-500/10 px-4 py-2 rounded-full">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-52 w-full rounded-2xl object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-7">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#F28B38]">
                   {project.category}
                 </span>
 
-              </div>
+                <h3 className="mt-3 text-2xl font-black text-[#172033]">
+                  {project.title}
+                </h3>
 
-              <h3 className="text-2xl font-bold mb-5 group-hover:text-purple-400 transition">
-                {project.title}
-              </h3>
+                <p className="mt-4 min-h-20 text-sm leading-7 text-[#827968]">
+                  {project.description}
+                </p>
 
-              <p className="text-gray-400 leading-8 mb-7">
-                {project.description}
-              </p>
+                {/* Technologies */}
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {project.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-full bg-[#F4EBDD] px-3 py-2 text-xs font-bold text-[#827968]"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
 
-              <div className="flex flex-wrap gap-3 mb-8">
-
-                {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="text-sm bg-zinc-800 text-purple-300 px-4 py-2 rounded-lg"
+                {/* Buttons */}
+                <div className="mt-7 flex gap-3">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 rounded-full border-2 border-[#172033] py-3 text-center text-sm font-bold text-[#172033] transition hover:bg-[#172033] hover:text-white"
                   >
-                    {tech}
-                  </span>
-                ))}
+                    GitHub ↗
+                  </a>
 
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 rounded-full bg-[#F28B38] py-3 text-center text-sm font-bold text-white shadow-[0_4px_0_#D96D24] transition hover:translate-y-1 hover:shadow-[0_1px_0_#D96D24]"
+                  >
+                    Live Demo ↗
+                  </a>
+                </div>
               </div>
-
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block text-purple-400 font-semibold hover:text-purple-300 transition"
-              >
-                View on GitHub →
-              </a>
-
-            </div>
+            </motion.div>
           ))}
-
         </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-20 text-center"
+        >
+          <h3 className="text-2xl font-black text-[#172033] md:text-3xl">
+            Have a project in mind?
+          </h3>
+
+          <a
+            href="#contact"
+            className="mt-7 inline-flex rounded-full bg-[#F28B38] px-8 py-4 font-bold text-white shadow-[0_6px_0_#D96D24] transition hover:translate-y-1 hover:shadow-[0_2px_0_#D96D24]"
+          >
+            Let's Work Together →
+          </a>
+        </motion.div>
+
       </div>
     </section>
   );
