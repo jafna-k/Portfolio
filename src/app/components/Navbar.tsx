@@ -41,10 +41,10 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full px-5 py-5 md:px-12">
-      <div className="mx-auto max-w-7xl">
+    <nav className="fixed top-0 left-0 z-50 w-full ">
+      <div className="mx-auto ">
 
-        <div className="flex items-center justify-between rounded-2xl border border-orange-100 bg-white/85 px-6 py-4 shadow-lg shadow-[#b9a58c]/15 backdrop-blur-xl">
+        <div className="flex items-center justify-between rounded-[4px] border border-orange-100 bg-white/85 px-6 py-4  backdrop-blur-xl">
 
           {/* Logo */}
           <Link href="#home"
@@ -66,12 +66,12 @@ export default function Navbar() {
           </div>
 
           {/* CTA */}
-          <Link
+          {/* <Link
             href="#contact"
-            className="hidden rounded-full bg-[#F28B38] px-6 py-3 text-sm font-bold text-white shadow-[0_5px_0_#D96D24] transition-all duration-200 hover:translate-y-1 hover:shadow-[0_2px_0_#D96D24] md:block"
+            className="hidden rounded-full bg-[#F28B38] px-6 py-3 text-sm font-bold text-white transition-all duration-200 hover:translate-y-1 hover:shadow-[0_2px_0_#D96D24] md:block"
           >
             Let's Talk →
-          </Link>
+          </Link> */}
 
           {/* Mobile Menu */}
           <button

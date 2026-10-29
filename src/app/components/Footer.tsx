@@ -14,12 +14,16 @@
 // }
 
 
-
-
 "use client";
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import {
+  SiGithub,
+
+  SiInstagram,
+} from "react-icons/si";
+import { ArrowUp } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -35,7 +39,6 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#172033] px-6 pb-8 pt-16 text-white">
-
       <div className="mx-auto max-w-6xl">
 
         {/* Main Footer */}
@@ -47,10 +50,7 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <Link
-              href="#home"
-              className="text-3xl font-extrabold"
-            >
+            <Link href="#home" className="text-3xl font-extrabold">
               David
               <span className="text-[#F28B38]">.</span>
             </Link>
@@ -60,36 +60,42 @@ export default function Footer() {
               beautiful websites and digital experiences.
             </p>
 
+            {/* Social Media Icons */}
             <div className="mt-6 flex gap-3">
+
+              {/* GitHub */}
               <a
                 href="https://github.com"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 transition hover:bg-[#F28B38]"
+                className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#F28B38]"
               >
-                GH
+                <SiGithub size={22} />
               </a>
 
+              {/* LinkedIn */}
               <a
                 href="https://linkedin.com"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 transition hover:bg-[#F28B38]"
+                className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#F28B38]"
               >
-                in
+               
               </a>
 
+              {/* Instagram */}
               <a
                 href="https://instagram.com"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 transition hover:bg-[#F28B38]"
+                className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#F28B38]"
               >
-                IG
+                <SiInstagram size={22} />
               </a>
+
             </div>
           </motion.div>
 
@@ -150,9 +156,9 @@ export default function Footer() {
           <a
             href="#home"
             aria-label="Back to top"
-            className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F28B38] text-xl font-bold text-white transition hover:-translate-y-1 hover:bg-[#D96D24]"
+            className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F28B38] text-white transition duration-300 hover:-translate-y-1 hover:bg-[#D96D24]"
           >
-            ↑
+            <ArrowUp size={22} />
           </a>
 
         </div>
