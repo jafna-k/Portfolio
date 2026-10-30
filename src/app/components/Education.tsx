@@ -80,7 +80,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, GraduationCap, Lightbulb, CalendarDays, ArrowUpRight } from "lucide-react";
+import { Code2, GraduationCap,CalendarDays,  } from "lucide-react";
 
 const education = [
   {
@@ -104,7 +104,7 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="bg-[#FFF9F0] px-6 py-24"
+      className="bg-[#F5EBDD] px-6 py-24"
     >
       <div className="mx-auto max-w-6xl">
 

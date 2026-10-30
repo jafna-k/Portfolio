@@ -1,24 +1,4 @@
 
-// "use client";
-
-// export default function Navbar() {
-//   return (
-//     <nav className="w-full bg-black text-white px-8 py-5 flex justify-between items-center">
-//       <h1 className="text-2xl font-bold">
-//         MyPortfolio
-//       </h1>
-
-//       <div className="flex gap-6">
-//         <a href="#home">Home</a>
-//         <a href="#about">About</a>
-//         <a href="#skills">Skills</a>
-//         <a href="#projects">Projects</a>
-//         <a href="#contact">Contact</a>
-//       </div>
-//     </nav>
-//   );
-// }
-
 
 
 
@@ -41,15 +21,17 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full ">
-      <div className="mx-auto ">
+    <nav className="fixed top-0 left-0 z-50 w-full">
+      <div className="w-full">
 
-        <div className="flex items-center justify-between rounded-[4px] border border-orange-100 bg-white/85 px-6 py-4  backdrop-blur-xl">
+        <div className="flex items-center justify-between border-b border-gray-200/70 bg-white/75 px-6 py-4 shadow-sm backdrop-blur-xl md:px-12 lg:px-16">
 
           {/* Logo */}
-          <Link href="#home"
-            className="text-2xl font-black tracking-tight text-[#172033]">
-            {/* David<span className="text-[#F28B38]">.</span> */}
+          <Link
+            href="#home"
+            className="text-2xl font-black tracking-[-1px] text-[#172033] transition-colors duration-300 hover:text-[#F28B38]"
+          >
+            Jafna<span className="text-[#F28B38]"></span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -58,25 +40,19 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-semibold text-[#172033] transition-colors duration-300 hover:text-[#F28B38]"
+                className="group relative py-2 text-sm font-semibold text-[#172033] transition-colors duration-300 hover:text-[#F28B38]"
               >
                 {link.name}
+
+                <span className="absolute bottom-0 left-0 h-[2px] w-0 rounded-full bg-[#F28B38] transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
           </div>
 
-          {/* CTA */}
-          {/* <Link
-            href="#contact"
-            className="hidden rounded-full bg-[#F28B38] px-6 py-3 text-sm font-bold text-white transition-all duration-200 hover:translate-y-1 hover:shadow-[0_2px_0_#D96D24] md:block"
-          >
-            Let's Talk →
-          </Link> */}
-
           {/* Mobile Menu */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="text-3xl font-bold text-[#172033] md:hidden"
+            className="text-3xl font-bold text-[#172033] transition-colors hover:text-[#F28B38] md:hidden"
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
           >
@@ -86,25 +62,25 @@ export default function Navbar() {
 
         {/* Mobile Dropdown */}
         {menuOpen && (
-          <div className="mt-3 flex flex-col gap-5 rounded-2xl border border-orange-100 bg-white p-6 shadow-xl md:hidden">
+          <div className="flex flex-col gap-2 border-b border-gray-200 bg-white/95 p-6 shadow-xl backdrop-blur-xl md:hidden">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="font-semibold text-[#172033] transition-colors hover:text-[#F28B38]"
+                className="rounded-lg px-4 py-3 font-semibold text-[#172033] transition-colors duration-300 hover:bg-orange-50 hover:text-[#F28B38]"
               >
                 {link.name}
               </Link>
             ))}
 
-            <Link
+            {/* <Link
               href="#contact"
               onClick={() => setMenuOpen(false)}
-              className="rounded-full bg-[#F28B38] py-3 text-center font-bold text-white"
+              className="mt-2 rounded-full bg-[#F28B38] py-3 text-center font-bold text-white transition-colors duration-300 hover:bg-[#D96D24]"
             >
               Let's Talk →
-            </Link>
+            </Link> */}
           </div>
         )}
       </div>

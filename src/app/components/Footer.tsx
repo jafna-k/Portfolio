@@ -1,32 +1,35 @@
 
-// export default function Footer() {
-//   return (
-//     <footer className="bg-black text-gray-400 text-center py-8">
-//       <p>
-//         © 2026 MyPortfolio. All Rights Reserved.
-//       </p>
-
-//       <p className="mt-2 text-purple-400">
-//         Built with Next.js and Tailwind CSS
-//       </p>
-//     </footer>
-//   );
-// }
-
 
 "use client";
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import {
   SiGithub,
-
   SiInstagram,
 } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
 import { ArrowUp } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > window.innerHeight * 0.8);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const footerLinks = [
     { name: "Home", href: "#home" },
@@ -51,7 +54,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <Link href="#home" className="text-3xl font-extrabold">
-              David
+              Jafna
               <span className="text-[#F28B38]">.</span>
             </Link>
 
@@ -65,7 +68,7 @@ export default function Footer() {
 
               {/* GitHub */}
               <a
-                href="https://github.com"
+                href="https://github.com/jafna-k"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -82,7 +85,7 @@ export default function Footer() {
                 aria-label="LinkedIn"
                 className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#F28B38]"
               >
-               
+                <FaLinkedin size={22} />
               </a>
 
               {/* Instagram */}
@@ -143,7 +146,7 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-5 pt-8 text-center md:flex-row">
 
           <p className="text-sm text-[#B9A58C]">
-            © {currentYear} David. All rights reserved.
+            © {currentYear} Jafna. All rights reserved.
           </p>
 
           <p className="text-sm text-[#B9A58C]">
@@ -152,18 +155,21 @@ export default function Footer() {
             and built with Next.js
           </p>
 
-          {/* Back to Top */}
-          <a
-            href="#home"
-            aria-label="Back to top"
-            className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F28B38] text-white transition duration-300 hover:-translate-y-1 hover:bg-[#D96D24]"
-          >
-            <ArrowUp size={22} />
-          </a>
-
         </div>
 
       </div>
+
+      {/* Back to Top - Hidden in Hero Section */}
+      {showBackToTop && (
+        <a
+          href="#home"
+          aria-label="Back to top"
+          className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-xl bg-[#F28B38] text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-[#D96D24]"
+        >
+          <ArrowUp size={22} />
+        </a>
+      )}
+
     </footer>
   );
 }
