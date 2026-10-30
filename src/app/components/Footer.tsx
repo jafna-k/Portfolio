@@ -136,7 +136,7 @@ export default function Footer() {
               href="mailto:yourmail@gmail.com"
               className="mt-5 inline-flex items-center gap-2 font-semibold text-[#F28B38] transition hover:text-[#F6C94D]"
             >
-              yourmail@gmail.com →
+                jafnakalathingal@gmail.com →
             </a>
           </div>
 

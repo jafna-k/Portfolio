@@ -1,9 +1,5 @@
 
 
-
-
-
-
 "use client";
 
 import { useState } from "react";
@@ -74,13 +70,6 @@ export default function Navbar() {
               </Link>
             ))}
 
-            {/* <Link
-              href="#contact"
-              onClick={() => setMenuOpen(false)}
-              className="mt-2 rounded-full bg-[#F28B38] py-3 text-center font-bold text-white transition-colors duration-300 hover:bg-[#D96D24]"
-            >
-              Let's Talk →
-            </Link> */}
           </div>
         )}
       </div>

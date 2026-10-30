@@ -45,8 +45,8 @@ export default function Hero() {
 
           {/* Description */}
           <p className="mx-auto mt-6 max-w-lg text-base leading-8 text-[#827968] lg:mx-0">
-            I create beautiful digital experiences with modern
-            technologies, creative ideas and interactive designs.
+           I'm a passionate Full Stack Developer who loves creating modern, responsive, and user-friendly web applications.
+            I enjoy turning creative ideas into interactive digital experiences using React, Next.js, Node.js, and MongoDB.
           </p>
 
           {/* Buttons */}
@@ -189,3 +189,11 @@ export default function Hero() {
     </section>
   );
 }
+
+
+
+
+
+
+
+
