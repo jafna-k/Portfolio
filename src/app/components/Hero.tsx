@@ -77,7 +77,7 @@ export default function Hero() {
 
             {/* GitHub Icon */}
             <a
-              href="https://github.com"
+              href="  https://github.com/jafna-k"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
@@ -96,7 +96,7 @@ export default function Hero() {
 
             {/* LinkedIn Icon */}
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/jafna-k-7472243b9/"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"

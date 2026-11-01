@@ -79,7 +79,7 @@ export default function Footer() {
 
               {/* LinkedIn */}
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/jafna-k-7472243b9/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -90,7 +90,7 @@ export default function Footer() {
 
               {/* Instagram */}
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/jafnaaaah/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"

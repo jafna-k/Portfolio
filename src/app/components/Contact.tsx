@@ -139,7 +139,7 @@ export default function Contact() {
                 jafnakalathingal@gmail.com
               </a>
             </div>
-
+"
             {/* Location */}
             <div className="mt-7">
               <p className="text-sm text-[#F6C94D]">
@@ -159,7 +159,7 @@ export default function Contact() {
 
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/jafna-k"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="GitHub"
@@ -169,7 +169,7 @@ export default function Contact() {
                 </a>
 
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/jafna-k-7472243b9/"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="LinkedIn"
@@ -179,7 +179,7 @@ export default function Contact() {
                 </a>
 
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/jafnaaaah/"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Instagram"

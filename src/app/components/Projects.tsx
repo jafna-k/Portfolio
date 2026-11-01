@@ -23,7 +23,7 @@ const projects = [
       "A beautiful personal portfolio with creative animations, modern layouts and responsive design.",
     image: "/portfolio.png",
     tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    github: "https://github.com/yourusername/portfolio",
+    github: "https://github.com/jafna-k/portfolio",
     demo: "https://your-portfolio-website.com",
   },
   {
@@ -31,9 +31,9 @@ const projects = [
     category: "Web Application",
     description:
       "A clean dashboard interface with statistics, data cards and interactive components.",
-    image: "/images/project3.png",
+    image: "/dashboard.png",
     tech: ["React", "Tailwind CSS", "JavaScript"],
-    github: "https://github.com/yourusername/dashboard",
+    github: "https://github.com/jafna-k/Ecommerce-Frontend.git",
     demo: "https://your-dashboard-website.com",
   },
 ];

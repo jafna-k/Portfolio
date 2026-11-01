@@ -67,7 +67,7 @@ export default function About() {
               className="relative w-full"
             >
               <Image
-                src="/about.png"
+                src="/about1.png"
                 alt="My Profile"
                 width={800}
                 height={1000}
