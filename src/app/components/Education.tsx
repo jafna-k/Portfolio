@@ -8,7 +8,7 @@ const education = [
   {
     year: "2026 - Present",
     title: "MERN Stack Development",
-    institution: "Full Stack Web Development",
+    institution: "Web Development",
     description: "MongoDB · Express · React · Node.js",
     icon: Code2,
   },

@@ -133,7 +133,7 @@ export default function About() {
             </h3>
 
             <p className="mb-5 text-base font-medium leading-8 text-[#827968]">
-              I'm a passionate Full Stack Developer specializing in the{" "}
+             Hi, I'm Jafna, a passionate Full Stack Developer specializing in the{" "}
               <span className="font-bold text-[#F28B38]">
                 MERN Stack
               </span>
@@ -185,3 +185,10 @@ export default function About() {
     </section>
   );
 }
+
+
+
+
+
+
+

@@ -139,7 +139,7 @@ export default function Contact() {
                 jafnakalathingal@gmail.com
               </a>
             </div>
-"
+
             {/* Location */}
             <div className="mt-7">
               <p className="text-sm text-[#F6C94D]">
