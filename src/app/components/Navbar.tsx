@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -29,7 +27,6 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
-  // Detect active section while scrolling
   useEffect(() => {
     let frame = 0;
 
@@ -84,7 +81,6 @@ export default function Navbar() {
     };
   }, []);
 
-  // Handle navigation click
   const handleClick = (id: string) => {
     setActiveSection(id);
     setMenuOpen(false);
@@ -105,11 +101,9 @@ export default function Navbar() {
           <span className="text-xl font-black tracking-[2px] text-[#172033] transition-colors duration-300 group-hover:text-[#F28B38] md:text-2xl">
             JAFNA
           </span>
-
-          
         </Link>
 
-        {/* Desktop Navigation - Text Only */}
+        {/* Desktop Navigation */}
         <div className="hidden items-center gap-6 md:flex lg:gap-8">
           {navLinks.map((link) => {
             const id = link.href.substring(1);
@@ -145,15 +139,11 @@ export default function Navbar() {
           aria-label="Toggle navigation"
           aria-expanded={menuOpen}
         >
-          {menuOpen ? (
-            <X size={25} />
-          ) : (
-            <Menu size={25} />
-          )}
+          {menuOpen ? <X size={25} /> : <Menu size={25} />}
         </button>
       </div>
 
-      {/* Mobile Dropdown - Icons + Names */}
+      {/* Mobile Dropdown - 2 Column Grid */}
       <div
         className={`absolute left-0 top-full w-full border-b border-[#E9D8BE] bg-[#FFF9F0]/95 px-5 shadow-xl backdrop-blur-xl transition-all duration-300 md:hidden ${
           menuOpen
@@ -161,7 +151,7 @@ export default function Navbar() {
             : "invisible -translate-y-3 opacity-0"
         }`}
       >
-        <div className="flex flex-col gap-2 py-5">
+        <div className="grid grid-cols-2 gap-3 py-5">
 
           {navLinks.map((link) => {
             const id = link.href.substring(1);
@@ -173,19 +163,20 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => handleClick(id)}
-                className={`flex items-center justify-between rounded-xl px-5 py-4 transition-all duration-300 ${
+                className={`flex min-h-[76px] items-center gap-3 rounded-xl px-4 py-4 transition-all duration-300 ${
                   active
                     ? "bg-[#FFF0E2] text-[#F28B38]"
                     : "text-[#172033] hover:bg-[#FFF0E2] hover:text-[#F28B38]"
                 }`}
               >
-                <span className="flex items-center gap-4 text-base font-bold">
-                  <Icon size={21} strokeWidth={2} />
+                <Icon size={22} strokeWidth={2} />
+
+                <span className="text-sm font-bold">
                   {link.name}
                 </span>
 
                 {active && (
-                  <span className="h-2 w-2 rounded-full bg-[#F28B38]" />
+                  <span className="ml-auto h-2 w-2 shrink-0 rounded-full bg-[#F28B38]" />
                 )}
               </Link>
             );
