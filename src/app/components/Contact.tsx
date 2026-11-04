@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 
 const SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbyXsFbviexEPwlDxmPwOKytzp6DPwVtCNoqj1jZK5aQQunr0JGjh56CgPG3scZHubQDbQ/exec";
+  "https://script.google.com/macros/s/AKfycbylrn2_rVpNj6MkUHo7RaGxyLGxOulha46Agd4nQZ-03nnfTmxEy5kkt23NGs616jf0eA/exec";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -21,8 +21,9 @@ export default function Contact() {
   });
 
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState<"success" | "error" | "">("");
 
+  // Input Change
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -30,12 +31,18 @@ export default function Contact() {
       ...formData,
       [e.target.name]: e.target.value,
     });
+
+    // Clear old status when user edits the form
+    setStatus("");
   };
 
+  // Form Submit
   const handleSubmit = async (
     e: React.FormEvent<HTMLFormElement>
   ) => {
     e.preventDefault();
+
+    if (loading) return;
 
     setLoading(true);
     setStatus("");
@@ -54,6 +61,9 @@ export default function Contact() {
         body: formBody,
       });
 
+      // Show message only after fetch completes
+      setStatus("success");
+
       setFormData({
         name: "",
         email: "",
@@ -61,16 +71,9 @@ export default function Contact() {
         message: "",
       });
 
-      setStatus(
-        "Message sent! Thank you for contacting me."
-      );
-
     } catch (error) {
       console.error("Contact form error:", error);
-
-      setStatus(
-        "Something went wrong. Please try again."
-      );
+      setStatus("error");
     } finally {
       setLoading(false);
     }
@@ -81,7 +84,7 @@ export default function Contact() {
       id="contact"
       className="relative overflow-hidden bg-gradient-to-br from-[#FFF8ED] via-[#FFF4E5] to-[#F4EBDD] px-6 py-24"
     >
-      <div className="mx-auto max-w-6xl relative z-10">
+      <div className="relative z-10 mx-auto max-w-6xl">
 
         {/* Heading */}
         <motion.div
@@ -158,6 +161,7 @@ export default function Contact() {
               </p>
 
               <div className="flex flex-wrap gap-3">
+
                 <a
                   href="https://github.com/jafna-k"
                   target="_blank"
@@ -187,6 +191,7 @@ export default function Contact() {
                 >
                   <FaInstagram size={22} />
                 </a>
+
               </div>
             </div>
           </motion.div>
@@ -211,6 +216,8 @@ export default function Contact() {
               onSubmit={handleSubmit}
               className="mt-8 space-y-5"
             >
+
+              {/* Name, Email, Subject */}
               {[
                 {
                   label: "Your Name",
@@ -232,11 +239,15 @@ export default function Contact() {
                 },
               ].map((field) => (
                 <div key={field.name}>
-                  <label className="mb-2 block text-sm font-semibold text-[#172033]">
+                  <label
+                    htmlFor={field.name}
+                    className="mb-2 block text-sm font-semibold text-[#172033]"
+                  >
                     {field.label}
                   </label>
 
                   <input
+                    id={field.name}
                     type={field.type}
                     name={field.name}
                     value={
@@ -254,11 +265,15 @@ export default function Contact() {
 
               {/* Message */}
               <div>
-                <label className="mb-2 block text-sm font-semibold text-[#172033]">
+                <label
+                  htmlFor="message"
+                  className="mb-2 block text-sm font-semibold text-[#172033]"
+                >
                   Message
                 </label>
 
                 <textarea
+                  id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
@@ -269,14 +284,28 @@ export default function Contact() {
                 />
               </div>
 
-              {/* Status */}
-              {status && (
-                <p
-                  className="text-sm font-semibold text-center text-[#D96D24]"
+              {/* Success Message */}
+              {status === "success" && (
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-center text-sm font-bold text-green-600"
                   role="status"
                 >
-                  {status}
-                </p>
+                  ✓ Message submitted! Thank you for contacting me.
+                </motion.p>
+              )}
+
+              {/* Error Message */}
+              {status === "error" && (
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-center text-sm font-bold text-red-500"
+                  role="alert"
+                >
+                  Something went wrong. Please try again!
+                </motion.p>
               )}
 
               {/* Submit Button */}
@@ -289,6 +318,7 @@ export default function Contact() {
                   ? "Sending..."
                   : "Send Message →"}
               </button>
+
             </form>
           </motion.div>
         </div>
