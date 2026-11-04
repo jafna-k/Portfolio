@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbwaR8CPo88rIIi3NEqnMwMU2V2No2_NAi7M8SWKV-Cl8ixhCDCqgYoV8k4kzWWf7jkzWg/ehttps://script.google.com/macros/s/AKfycbwaR8CPo88rIIi3NEqnMwMU2V2No2_NAi7M8SWKV-Cl8ixhCDCqgYoV8k4kzWWf7jkzWg/exec";
+"https://script.google.com/macros/s/AKfycbyXsFbviexEPwlDxmPwOKytzp6DPwVtCNoqj1jZK5aQQunr0JGjh56CgPG3scZHubQDbQ/exec";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
